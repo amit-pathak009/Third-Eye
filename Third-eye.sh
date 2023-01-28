@@ -7,13 +7,16 @@ E='\033[0m'
 
 headers_file=user-agent
 payloads_file=blind
-read -p "Enter Path of URL's to Scan : " urls_file
+urls_file=urls
+read -p "Enter Path of Urls: " sub
 figlet -f big "THIRD EYE" | lolcat
 echo -e "${O}[+] 🔱 Har Har Mahadev 🔱 [+]${E}"
 sleep 2
-echo -e "${R}[+] ${G}Starting Blind XSS Scanning.......${E}"
-sleep 1
-echo -e "${R}[+] ${G} Hold Your Chairs Tight and Let Me do My Work Now 🚀${E}\n"
+echo ""
+echo -e "${R}[+] ${G}Running httprobe on targets.......${E}\n"
+cat $sub | httprobe -p http:81 -p http:80 -p http:443 -p http:3000 -p https:3000 -p http:3001 -p https:3001 -p http:8000 -p http:8080 -p https:8443 -p https:10000 -p http:9000 -p https:9443 -c 50 | tee urls
+echo ""
+echo -e "${R}[-] ${O}Starting Blind XSS Scanning.......${E}\n"
 sleep 1
 while IFS= read -r header; do
     while IFS= read -r payload; do
