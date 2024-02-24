@@ -5,7 +5,7 @@ G='\033[0;32m'
 O='\033[0;33m'
 E='\033[0m'
 
-headers_file=user-agent
+headers_file=headers
 payloads_file=blind
 urls_file=urls
 read -p "Enter Path of Urls: " sub
