@@ -13,8 +13,8 @@ figlet -f big "THIRD EYE" | lolcat
 echo -e "${O}[+] 🔱 Har Har Mahadev 🔱 [+]${E}"
 sleep 2
 echo ""
-echo -e "${R}[+] ${G}Running httprobe on targets.......${E}\n"
-cat $sub | httprobe -p http:81 -p http:80 -p http:443 -p http:3000 -p https:3000 -p http:3001 -p https:3001 -p http:8000 -p http:8080 -p https:8443 -p https:10000 -p http:9000 -p https:9443 -c 50 | tee urls
+#echo -e "${R}[+] ${G}Running httprobe on targets.......${E}\n"
+#cat $sub | httprobe -p http:81 -p http:80 -p http:443 -p http:3000 -p https:3000 -p http:3001 -p https:3001 -p http:8000 -p http:8080 -p https:8443 -p https:10000 -p http:9000 -p https:9443 -c 50 | tee urls
 echo ""
 echo -e "${R}[-] ${O}Starting Blind XSS Scanning.......${E}\n"
 sleep 1
